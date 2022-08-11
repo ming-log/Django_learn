@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-    People: {{pk}}
+    <h1>People:</h1>
+    {% for p in pk %}
+    <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{p}}</h2>
+    {% endfor %}
 </body>
 </html>

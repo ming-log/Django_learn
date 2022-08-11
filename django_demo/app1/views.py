@@ -45,7 +45,7 @@ def current_datetime(request):
 
 def person_detail(request, pk):
     try:
-        p = Person.objects.get(first_name=pk)  # 获取Person数据
+        P =  Person.objects.filter(first_name=pk)  # 获取Person数据
     except Person.DoesNotExist:
         raise Http404('Person Does Nont Exist')
-    return render(request, 'person_detail.html', {'pk': p.last_name})
+    return render(request, 'person_detail.html', {'pk': [p.last_name for p in P]})
