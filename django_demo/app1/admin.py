@@ -8,7 +8,7 @@ class PersonAdmin(admin.ModelAdmin):
     创建PersonAdmin类，继承于admin.ModelAdmin
     """
     # 配置展示列表，在Person板块下的列表展示
-    list_display = ('first_name', 'last_name')
+    list_display = ('created_at', 'updated_at', 'first_name', 'last_name')
 
     # 配置过滤查询字段，在Person板块下的右侧过滤框
     list_filter = ('first_name', 'last_name')

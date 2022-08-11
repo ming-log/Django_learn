@@ -54,9 +54,10 @@ ROOT_URLCONF = 'django_demo.urls'
 
 TEMPLATES = [
     {
+        # 模板引擎，默认为Django模板
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [],  # 模板所在目录
+        'APP_DIRS': True,  # 是否启用App目录
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -74,10 +75,18 @@ WSGI_APPLICATION = 'django_demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_db',
+        'USER': 'root',
+        'PASSWORD': '123456'
     }
 }
 
